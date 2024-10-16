@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package Foo;
+
+message Person {
+  string name = 1;
+  int32 id = 2;
+  optional string email = 3;
+
+  enum PhoneType {
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+  }
+
+  message PhoneNumber {
+    string number = 1;
+    optional PhoneType type = 2;
+  }
+
+  repeated PhoneNumber phone = 4;
+}
+
+enum FizzBuzzType {
+  FIZZ = 0;
+  BUZZ = 5;
+  FIZZBUZZ = 15;
+}
+
+message Bar {
+  string string_= 1;
+  string string_required_default = 2;
+
+  optional string string_optional = 3;
+  optional string string_optional_default = 4;
+
+  optional bytes bytes_optional = 5;
+  optional bytes bytes_optional_default = 6;
+
+  optional FizzBuzzType enum_optional = 7;
+  optional FizzBuzzType enum_optional_default = 8;
+}
+
+message RepeatedValues {
+  repeated int32    value_int32 = 1;
+  repeated sint32   value_sint32 = 2;
+  repeated sfixed32 value_sfixed32 = 3;
+  repeated uint32   value_uint32 = 4;
+  repeated fixed32  value_fixed32 = 5;
+  repeated int64    value_int64 = 6;
+  repeated sint64   value_sint64 = 7;
+  repeated sfixed64 value_sfixed64 = 8;
+  repeated uint64   value_uint64 = 9;
+  repeated fixed64  value_fixed64 = 10;
+  repeated float    value_float = 11;
+  repeated double   value_double = 12;
+  repeated bool     value_bool = 13;
+
+  repeated FizzBuzzType value_enum = 14;
+  repeated string       value_string = 15;
+  repeated bytes        value_bytes = 16;
+
+  repeated Person value_message = 17;
+}
+
+message Something {
+  oneof something {
+    string oneof_string = 11;
+    bytes oneof_bytes = 22;
+  }
+}
