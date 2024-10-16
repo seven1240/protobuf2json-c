@@ -19,3 +19,6 @@ benchmark: check
 
 MY_COVERAGE_DIRECTORY = $(abs_top_builddir)/src
 @MY_COVERAGE_RULES@
+
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = libprotobuf2json.pc

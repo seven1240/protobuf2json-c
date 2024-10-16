@@ -1,0 +1,12 @@
+prefix="/usr/local"
+exec_prefix="${prefix}"
+libdir="${prefix}/lib"
+includedir="${prefix}/include"
+
+Name: Convert protobuf to JSON
+Description: A library convert protobuf-c message to JSON
+URL: https://github.com/seven1240/protobuf2json-c
+Version: 0.4.0
+Cflags: -I"${includedir}"
+Libs: -L"${libdir}" -lprotobuf2json-c
+Libs.private: -L"${libdir}" -lprotobuf2json-c
